@@ -152,6 +152,7 @@ class Directory
   unwatch: ->
     if @watchSubscription?
       @watchSubscription.close()
+      @watchSubscription.handleWatcher.close()
       @watchSubscription = null
 
     for key, entry of @entries
